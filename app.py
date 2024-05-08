@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import mediapipe as mp
 import numpy as np
 import tempfile
@@ -14,7 +13,7 @@ DEMO_IMAGE2 = './assets/site_image/demo2.webp'
 DEMO_VIDEO = './assets/site_image/demo.mp4'
 
 st.title('A Sign Language Interpreter')
-st.write("Here's our first attempt at using data to create a table:")
+st.write("Will implement it later....rn only face detection")
 st.markdown(
     """
     <style>
@@ -51,20 +50,20 @@ def image_resize(image, width=None, height=None, inter=cv2.INTER_AREA):
     return resized
 
 
-app_mode = st.sidebar.selectbox('Choose the App Mode',
+app_mode = st.sidebar.selectbox('Menu :',
                                 ['About App', 'Run on Image', 'Run on Video']
                                 )
 
 if app_mode == 'About App':
-    st.markdown('In this Application we are using **MediaPipe** for creating a FaceMesh App. ')
+    st.markdown(' **MediaPipe** OP in the chat guys')
     st.markdown(
         """
         <style>
         [data-testid="stSidebar"][aria-expanded="true"] > div:first-child{
-        width:350px
+        width:100%
         }
         [data-testid="stSidebar"][aria-expanded="false"] > div:first-child{
-        width:350px
+        width:350px;
         margin-left: -350px
         }
         </style>
@@ -78,17 +77,17 @@ if app_mode == 'About App':
         '''
     )
 elif app_mode == 'Run on Image':
-    drawing_spec = mp_drawing.DrawingSpec(thickness=2, circle_radius=1)
+    drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
     st.sidebar.markdown('---')
 
     st.markdown(
         """
         <style>
         [data-testid="stSidebar"][aria-expanded="true"] > div:first-child{
-        width:350px
+           width:100%
         }
         [data-testid="stSidebar"][aria-expanded="false"] > div:first-child{
-        width:350px
+        width:350px;
         margin-left: -350px
         }
         </style>
@@ -151,7 +150,7 @@ elif app_mode == 'Run on Video':
         """
         <style>
         [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
-            width: 400px;
+               width:100%;
         }
         [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
             width: 400px;
