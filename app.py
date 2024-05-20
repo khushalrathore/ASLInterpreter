@@ -1,9 +1,9 @@
-import streamlit as st
+import tempfile
+import time
+import cv2
 import mediapipe as mp
 import numpy as np
-import tempfile
-import cv2
-import time
+import streamlit as st
 from PIL import Image
 
 mp_drawing = mp.solutions.drawing_utils
@@ -12,8 +12,9 @@ DEMO_IMAGE = './assets/site_image/demo.jpeg'
 DEMO_IMAGE2 = './assets/site_image/demo2.webp'
 DEMO_VIDEO = './assets/site_image/demo.mp4'
 
-st.title('A Sign Language Interpreter')
-st.write("Will implement it later....rn only face detection")
+st.set_page_config(layout="wide")
+st.title('Face Detection')
+
 st.markdown(
     """
     <style>
